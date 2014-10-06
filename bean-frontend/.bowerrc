@@ -1,0 +1,5 @@
+{
+    "directory": "src/main/webapp/bower_components",
+    "proxy":"http://cn-proxy.jp.oracle.com:80",
+    "https-proxy":"http://cn-proxy.jp.oracle.com:80"
+}

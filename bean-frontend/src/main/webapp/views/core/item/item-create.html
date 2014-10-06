@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)http://v3.bootcss.com/examples/carousel/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="">
+
+    <title>Carousel Template for Bootstrap</title>
+    <link href="http://cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
+    <link rel="stylesheet" href="../../../styles/jquery.fileupload.css">
+    <link rel="stylesheet" href="../../../styles/jquery.fileupload-ui.css">
+
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link href="http://v3.bootcss.com/examples/carousel/carousel.css" rel="stylesheet">
+    <link href="../../../styles/create-template.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../../home.html">Project name</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="../../../home.html">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</div>
+
+<div class="container">
+    <div style="margin-top: 17px;text-align: center;margin-bottom: 30px;">
+        <p id="pIndex">1/5</p>
+    </div>
+    <div id="div-item-name" style="text-align: center;">
+        <h1>从这里开始，创建我的物品</h1>
+        <p class="lead">Turn your stuff into cash, fast and easy.</p>
+    </div>
+    <div id="div-item-desc" style="display: none;text-align: center">
+        <h1>关于我的物品</h1>
+        <p class="lead">Turn your stuff into cash, fast and easy.</p>
+    </div>
+    <div id="div-my-info" style="display: none;text-align: center">
+        <h1>您可以联系到我</h1>
+        <p class="lead">Turn your stuff into cash, fast and easy.</p>
+    </div>
+    <div id="div-pic" style="display: none;text-align: center">
+        <h1>几张图片，让其他人更好的了解物品</h1>
+        <p class="lead">Turn your stuff into cash, fast and easy.</p>
+    </div>
+    <div id="div-review" style="display: none;text-align: center">
+        <h1>最后，看起来还不错</h1>
+        <p class="lead">Turn your stuff into cash, fast and easy.</p>
+    </div>
+</div>
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+<div class="carousel-inner" role="listbox">
+    <div class="item active">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide">
+        <div class="container">
+            <div class="carousel-caption">
+                <div class="input-group input-item-name-group">
+                    <input type="text" class="form-control input-item-name" placeholder="Example:Apple Keyboard with Numeric Keypad">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default button-item-next" id="btn_next" type="button">Next</button>
+                        </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="item">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAGZmZgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Second slide">
+        <div class="container">
+            <div class="carousel-caption">
+                <div class="carousel-container" align="left">
+                    <h1>物品所属 <a id="selCategory" href="#" data-toggle="modal" data-target="#categoryModal">类别</a></h1>
+                    <h1>物品是 <a id="selCondition" href="#" data-toggle="modal" data-target="#conditionModal">全新的</a></h1>
+                    <h1>物品的原价是 <a id="selOriPrice" href="#"  data-toggle="modal" data-target="#oriPriceModal">多少</a></h1>
+                    <h1>我希望的价格是 <a id="selMyPrice" href="#" data-toggle="modal" data-target="#myPriceModal">多少</a></h1>
+                    <h1><a id="selDesc" href="#" data-toggle="modal" data-target="#descModal">更详细的描述</a></h1>
+                    <button class="btn btn-primary" type="button" id="btn_next_2" style="margin-top: 20px">Continue</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="item">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAFVVVQAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Third slide">
+        <div class="container">
+            <div class="carousel-caption">
+                <div class="carousel-container" align="left">
+                    <h1>我所在的大致 <a id="selGeneralLocation" href="#" data-toggle="modal" data-target="#generalLocationModal"> 区域</a></h1>
+                    <h1>您可以通过 <a id="selPhone" href="#" data-toggle="modal" data-target="#phoneModal">手机号</a> 联系到我</h1>
+                    <button class="btn btn-primary" type="button" id="btn_next_3" style="margin-top: 20px">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="item">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAFVVVQAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Third slide">
+        <div class="container">
+            <div class="carousel-caption">
+                <div class="carousel-container" align="left">
+                    <form id="fileupload" action="http://localhost:8080/rest/item/upload" method="POST" enctype="multipart/form-data">
+                        <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
+                        <div class="row fileupload-buttonbar">
+                            <div class="col-lg-7">
+                                <!-- The fileinput-button span is used to style the file input field as button -->
+                                    <span class="btn btn-success fileinput-button">
+                                        <i class="glyphicon glyphicon-plus"></i>
+                                        <span>Add files...</span>
+                                        <input type="file" name="file" multiple>
+                                    </span>
+                                <!-- The global file processing state -->
+                                <span class="fileupload-process"></span>
+                            </div>
+                            <!-- The global progress state -->
+                            <div class="col-lg-5 fileupload-progress fade">
+                                <!-- The global progress bar -->
+                                <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar progress-bar-success" style="width:0%;"></div>
+                                </div>
+                                <!-- The extended global progress state -->
+                                <div class="progress-extended">&nbsp;</div>
+                            </div>
+                        </div>
+                        <!-- The table listing the files available for upload/download -->
+                        <table role="presentation" class="table"><tbody class="files"></tbody></table>
+                    </form>
+                    <button class="btn btn-primary" type="button" id="btn_next_4" style="margin-top: 20px">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="item">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAFVVVQAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Third slide">
+        <div class="container">
+            <div class="carousel-caption">
+                <div class="carousel-container" style="width:100%" align="left">
+                    <div class="col-sm-5 col-md-5">
+                        <div class="form-group">
+                            <label for="itemName" class="col-md-3 control-label">物品名</label>
+                            <div class="col-md-9 control-label">
+                                <span class="text-left" id="itemName">物品</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-sm-7 col-md-7">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade bs-example-modal-sm item-modal" id="categoryModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-body" id="divCategoryList">
+                <a href="#" class="list-group-item">空</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade bs-example-modal-sm item-modal" id="conditionModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-body" id="divConditionList">
+                <a href="#" class="list-group-item">全新的</a>
+                <a href="#" class="list-group-item">二手的</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade bs-example-modal-sm item-modal" id="oriPriceModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-body" id="divOriPrice">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="0.00￥">
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary" type="button">Next</button>
+                        </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade bs-example-modal-sm item-modal" id="myPriceModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-body" id="divMyPrice">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="0.00￥">
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary" type="button">Next</button>
+                        </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade item-modal" id="descModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body" id="divDesc">
+                <div class="input-group">
+                    <textarea class="form-control" rows="5" style="resize:none" placeholder="添加描述"></textarea>
+                    <span class="input-group-addon btn btn-primary">Next</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade item-modal" id="generalLocationModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body" id="divGeneralLocation">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="我的位置">
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary" type="button">Next</button>
+                        </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade item-modal" id="phoneModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-body" id="divPhone">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="联系电话">
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary" type="button">Next</button>
+                        </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--<a class="left carousel-control" id="slide-prev" href="http://v3.bootcss.com/examples/carousel/#myCarousel" role="button" data-slide="prev">-->
+<!--<span class="glyphicon glyphicon-chevron-left"></span>-->
+<!--<span class="sr-only">Previous</span>-->
+<!--</a>-->
+<!--<a class="right carousel-control" id="slide-next" href="http://v3.bootcss.com/examples/carousel/#myCarousel" role="button" data-slide="next">-->
+<!--<span class="glyphicon glyphicon-chevron-right"></span>-->
+<!--<span class="sr-only">Next</span>-->
+<!--</a>-->
+</div>
+<script src="../../../bower_components/jquery/jquery.min.js"></script>
+<script src="../../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../../../bower_components/jqueryui/jquery-ui.min.js"></script>
+<script src="../../../bower_components/blueimp-tmpl/js/tmpl.min.js"></script>
+<script src="../../../bower_components/blueimp-load-image/js/load-image.min.js"></script>
+<script src="../../../bower_components/blueimp-canvas-to-blob/js/canvas-to-blob.min.js"></script>
+<script src="../../../bower_components/blueimp-gallery/js/jquery.blueimp-gallery.min.js"></script>
+<script src="http://v3.bootcss.com/assets/js/docs.min.js"></script>
+<!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
+<script src="../../../scripts/core/item/jquery.iframe-transport.js"></script>
+<!-- The basic File Upload plugin -->
+<script src="../../../scripts/core/item/jquery.fileupload.js"></script>
+<!-- The File Upload processing plugin -->
+<script src="../../../scripts/core/item/jquery.fileupload-process.js"></script>
+<!-- The File Upload image preview & resize plugin -->
+<script src="../../../scripts/core/item/jquery.fileupload-image.js"></script>
+<!-- The File Upload audio preview plugin -->
+<script src="../../../scripts/core/item/jquery.fileupload-audio.js"></script>
+<!-- The File Upload video preview plugin -->
+<script src="../../../scripts/core/item/jquery.fileupload-video.js"></script>
+<!-- The File Upload validation plugin -->
+<script src="../../../scripts/core/item/jquery.fileupload-validate.js"></script>
+<!-- The File Upload user interface plugin -->
+<script src="../../../scripts/core/item/jquery.fileupload-ui.js"></script>
+<!-- The main application script -->
+<script src="../../../scripts/core/item/main.js"></script>
+<script id="template-upload" type="text/x-tmpl">
+{% for (var i=0, file; file=o.files[i]; i++) { %}
+    <tr class="template-upload fade">
+        <td>
+            <span class="preview"></span>
+        </td>
+        <td>
+            <p class="name" style="font-size:80%">{%=file.name%}</p>
+            <strong class="error text-danger"></strong>
+        </td>
+        <td>
+            <p class="size">Processing...</p>
+            <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                <div class="progress-bar progress-bar-success" style="width:0%;"></div>
+            </div>
+        </td>
+        <td>
+            {% if (!i && !o.options.autoUpload) { %}
+                <button class="btn btn-primary start" disabled>
+                    <i class="glyphicon glyphicon-upload"></i>
+                    <span>Start</span>
+                </button>
+            {% } %}
+            {% if (!i) { %}
+                <button class="btn btn-warning cancel">
+                    <i class="glyphicon glyphicon-ban-circle"></i>
+                    <span>Cancel</span>
+                </button>
+            {% } %}
+        </td>
+    </tr>
+{% } %}
+</script>
+<!-- The template to display files available for download -->
+<script id="template-download" type="text/x-tmpl">
+{% for (var i=0, file; file=o.files[i]; i++) { %}
+    <tr class="template-download fade">
+        <td>
+            <span class="preview">
+                {% if (file.thumbnailUrl) { %}
+                    <a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" data-gallery><img src="{%=file.thumbnailUrl%}"></a>
+                {% } %}
+            </span>
+        </td>
+        <td>
+            <p class="name">
+                {% if (file.url) { %}
+                    <a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" {%=file.thumbnailUrl?'data-gallery':''%}>{%=file.name%}</a>
+                {% } else { %}
+                    <span>{%=file.name%}</span>
+                {% } %}
+            </p>
+            {% if (file.error) { %}
+                <div><span class="label label-danger">Error</span> {%=file.error%}</div>
+            {% } %}
+        </td>
+        <td>
+            <span class="size">{%=o.formatFileSize(file.size)%}</span>
+        </td>
+        <td>
+            {% if (file.deleteUrl) { %}
+                <button class="btn btn-danger delete" data-type="{%=file.deleteType%}" data-url="{%=file.deleteUrl%}"{% if (file.deleteWithCredentials) { %} data-xhr-fields='{"withCredentials":true}'{% } %}>
+                    <i class="glyphicon glyphicon-trash"></i>
+                    <span>Delete</span>
+                </button>
+                <input type="checkbox" name="delete" value="1" class="toggle">
+            {% } else { %}
+                <button class="btn btn-warning cancel">
+                    <i class="glyphicon glyphicon-ban-circle"></i>
+                    <span>Cancel</span>
+                </button>
+            {% } %}
+        </td>
+    </tr>
+{% } %}
+</script>
+
+<script>
+    // Initialize the jQuery UI theme switcher:
+    $('#theme-switcher').change(function () {
+        var theme = $('#theme');
+        theme.prop(
+                'href',
+                theme.prop('href').replace(
+                        /[\w\-]+\/jquery-ui.css/,
+                                $(this).val() + '/jquery-ui.css'
+                )
+        );
+    });
+</script>
+<script type="text/javascript">
+    var slideIndex = 0;
+    $('.carousel').carousel({
+        interval: false
+    });
+
+    $("#btn_next").click(function(){
+        slideIndex += 1;
+        updateCarousel(slideIndex);
+    });
+
+    $("#btn_next_2").click(function(){
+        slideIndex += 1;
+        updateCarousel(slideIndex);
+    });
+
+    $("#btn_next_3").click(function(){
+        slideIndex += 1;
+        updateCarousel(slideIndex);
+    });
+    $("#btn_next_4").click(function(){
+        slideIndex += 1;
+        updateCarousel(slideIndex);
+    });
+
+    function updateCarousel(indel){
+        $('.carousel').carousel('next');
+
+        if(indel % 5 == 1){
+            $("#pIndex").text("2/5");
+            $("#div-my-info").hide();
+            $("#div-item-name").hide();
+            $("#div-pic").hide();
+            $("#div-review").hide();
+            $("#div-item-desc").show();
+        }else if(indel % 5 == 2){
+            $("#pIndex").text("3/5");
+            $("#div-item-desc").hide();
+            $("#div-pic").hide();
+            $("#div-review").hide();
+            $("#div-item-name").hide();
+            $("#div-my-info").show();
+        }else if(indel % 5 == 3){
+            $("#pIndex").text("4/5");
+            $("#div-my-info").hide();
+            $("#div-item-desc").hide();
+            $("#div-item-name").hide();
+            $("#div-review").hide();
+            $("#div-pic").show();
+        }
+        else if(indel % 5 == 4){
+            $("#pIndex").text("5/5");
+            $("#div-my-info").hide();
+            $("#div-item-desc").hide();
+            $("#div-item-name").hide();
+            $("#div-pic").hide();
+            $("#div-review").show();
+        }else if(indel % 5 == 0){
+            $("#pIndex").text("1/5");
+            $("#div-my-info").hide();
+            $("#div-item-desc").hide();
+            $("#div-review").hide();
+            $("#div-pic").hide();
+            $("#div-item-name").show();
+        }
+    }
+
+
+    var uriGetAllCategories = "../../../../rest/category/all";
+    var categoryList = new Array();
+
+    $(function() {
+        $.ajax( {
+            type : "GET",
+            url : uriGetAllCategories,
+            async : false,
+            success : function (data) {
+                var ja = data.categories;
+                for(i in ja){
+                    var categoryName = ja[i].categoryName;
+                    categoryList.push(categoryName);
+                }
+            },
+            error : function (jqXHR, textStatus, errorThrown) {
+                alert('Can not get data, error happens:' + errorThrown);
+            }
+        });
+    });
+
+    $("#selCategory").click(function(){
+        $("#divCategoryList").empty();
+        for(i in categoryList){
+            var a = "<a href=\"#\" class=\"list-group-item\">"+categoryList[i]+"</a>";
+            $("#divCategoryList").append(a);
+        }
+    });
+
+</script>
+</body></html>

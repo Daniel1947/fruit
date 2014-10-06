@@ -1,0 +1,12 @@
+<div class="top masonry js-masonry" data-masonry-options='{ "columnWidth": 300, "itemSelector": ".item" }' >
+    <div class="item" ng-repeat="item in items">
+        <div class="item-image-wrapper">
+           <img ng-src="{{ item.itemPicture1 }}" />
+        </div>
+        <div class="item-info">
+            <div class="item-name">{{ item.itemName  }}</div>
+            <div class="item-seller-name">{{ item.itemSellerName }}</div>
+            <div class="item-price">{{ item.itemMaxPrice }}</div>
+        </div>
+    </div>
+</div>

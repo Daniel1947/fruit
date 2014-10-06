@@ -1,0 +1,21 @@
+<div class="modal fade login" my-modal  ng-controller="AuthCtrl">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title">Log In</h4>
+            </div>
+            <div class="modal-body auth-forms">
+                <form ng-submit="login()">
+                   <!-- <input type="email" ng-model="user.email" placeholder="Email" class="form-control" /> -->
+                    <input type="text" ng-model="user.name" placeholder="姓名" class="form-control" />
+                    <input type="password" ng-model="user.password"  placeholder="密码" class="form-control" />
+                    <input type="submit" value="登录" class="btn btn-primary" />
+                </form>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
